@@ -1,0 +1,111 @@
+// variables
+$color-gray: #8bacda80;
+$body-background: #0d192b;
+$card-background: #14253d;
+$color-white: #fff;
+$color-green: #00fff7;
+// fonts
+@font-face {
+  font-family: "font";
+  src: url("../../fonts/QGYvz_MVcBeNP4NJtEtq.woff2") format("woff2");
+}
+// universal styles
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "font";
+}
+.body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  background-color: $body-background;
+  font-size: 16px;
+  .card {
+    display: flex;
+    width: 19.5rem;
+    height: 32rem;
+    justify-content: space-between;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1.5rem;
+    background-color: $card-background;
+    border-radius: 1rem;
+    position: relative;
+    .card__img {
+      width: 100%;
+      height: 50%;
+      border-radius: 0.5rem;
+      &:hover + .view-img {
+        opacity: 1;
+        visibility: visible;
+        background-color: rgba($color: $color-green, $alpha: 0.4);
+      }
+    }
+    .view-img {
+      @extend.card__img;
+      width: 85%;
+      height: 45.4%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      transition: all 0.5s ease 0.5s;
+      opacity: 0;
+      visibility: hidden;
+    }
+    .card__title {
+      font-size: 1.5rem;
+      color: $color-white;
+    }
+    .card__text {
+      color: $color-gray;
+    }
+    .price-wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .price {
+        @extend .price-wrapper;
+        gap: 0.5rem;
+        .price__text {
+          color: $color-green;
+        }
+      }
+    }
+    .clock {
+      @extend .price-wrapper;
+      gap: 0.5rem;
+      .clock__text {
+        color: $color-gray;
+      }
+    }
+    .creator-person {
+      @extend .price-wrapper;
+      justify-content: flex-start;
+      border-top: 0.1rem solid $color-gray;
+      padding-top: 0.5rem;
+      gap: 1rem;
+      width: 100%;
+      height: 12%;
+      .creator-person__img {
+        width: 12%;
+        height: 66%;
+        background-size: cover;
+        border: 0.1rem solid $color-white;
+        border-radius: 100%;
+      }
+      .creator-person__text {
+        color: $color-gray;
+      }
+      .creator-person__name {
+        color: $color-white;
+      }
+    }
+  }
+}
