@@ -1,6 +1,7 @@
 # Preview-card 👨‍💻
 >This little friend is a preview-card which you can visit your product before buying it and it'll give you some knowledge about the product.
->It also has variables and mixin or extended styles.
+>It also has variables and mixin or extended styles.<br>
+>Try free Demo <a href="https://ali-boorboor.github.io/Preview-card/">Here</a>
 >>```javascript
 >>let usedLanguages = {
 >>  tech: HTML,
